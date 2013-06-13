@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>NiceText by vikasing</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>NiceText</h1>
+        <h2>A Java based web page text extraction lib</h2>
+        <a href="https://github.com/vikasing" class="button"><small>Follow me on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h3>
+<a name="nicetext-repo-link-httpsgithubcomvikasingnicetext" class="anchor" href="#nicetext-repo-link-httpsgithubcomvikasingnicetext"><span class="octicon octicon-link"></span></a>NiceText Repo Link: <a href="https://github.com/vikasing/NiceText">https://github.com/vikasing/NiceText</a>
+</h3>
+
+<hr><h2>
+<a name="what-is-nicetext" class="anchor" href="#what-is-nicetext"><span class="octicon octicon-link"></span></a>What is NiceText?</h2>
+
+<p>Its a small Java based library to extract main content from a web page, it removes HTML, JS, CSS and other text clutter from an HTML document. It extracts the main text from a webpage based on text density of the different part of the webpage and later clustering these regions to find the largest and most appropriate region.</p>
+
+<h2>
+<a name="how-to-use-nicetext" class="anchor" href="#how-to-use-nicetext"><span class="octicon octicon-link"></span></a>How to use NiceText?</h2>
+
+<p>Right now you can download 2 files <code>NiceTextType.java</code> and <code>HTMLHelper.java</code>, include them in your project and do the following:</p>
+
+<div class="highlight"><pre><span class="n">HTMLHelper</span> <span class="n">htmlHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HTMLHelper</span><span class="o">();</span>       
+<span class="n">NiceTextType</span> <span class="n">niceTextType</span> <span class="o">=</span> <span class="n">htmlHelper</span><span class="o">.</span><span class="na">getNiceText</span><span class="o">(</span><span class="s">"http://www.nytimes.com/2013/06/11/us/how-edward-j-snowden-orchestrated-a-blockbuster-story.html?pagewanted=all&amp;_r=0"</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">niceTextType</span><span class="o">.</span><span class="na">getArticleText</span><span class="o">());</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">niceTextType</span><span class="o">.</span><span class="na">getNiceText</span><span class="o">());</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">niceTextType</span><span class="o">.</span><span class="na">getLargestTextBlock</span><span class="o">());</span>
+</pre></div>
+
+<p><em>I'm still working on the improvements and tweaks, with the addition of new Classes above code is most likely to change.</em></p>
+
+<h2>
+<a name="how-does-it-work" class="anchor" href="#how-does-it-work"><span class="octicon octicon-link"></span></a>How does it work?</h2>
+
+<p>NiceText finds the text density of different regions on a webpage and tries to determine the largest region buy using clustering. This large region or cluster is chosen as the maintext or <code>niceText</code>.</p>
+
+<p><em>I'll write a detailed post on how it works sometime in future.</em></p>
+
+<p>There is also a method <code>getArticleText()</code> which just tries to find out an article region by looking at the tag names, class names and ids, e.g. it looks for following words:
+<code>article|section|content|page|post|...</code>
+It sometimes produces bad results but is faster than the <code>getNiceText()</code>.</p>
+
+<p>You may also try <code>getAllText()</code> to get all the text of a webpage.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>I have yet to decide on the license, but it will be free for both commercial as well as free usage.</p>
+
+<h2>
+<a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>Contact</h2>
+
+<p>Leave a comment, report an issue at the repo page, fork it to make it better or worse. Or drop me an email @ vikasing [at] gmail.com</p>
+
+<p>-vik </p>
+        </section>
+
+        <aside id="sidebar">
+
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
